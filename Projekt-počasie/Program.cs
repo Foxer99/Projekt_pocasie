@@ -10,8 +10,7 @@ namespace Projekt_počasie
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ahoj");
-            Console.WriteLine("Fungujem");
+
         }
     }
 }
