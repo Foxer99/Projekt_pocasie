@@ -12,6 +12,8 @@ namespace Projekt_počasie
     {
         static void Main(string[] args)
         {
+            /* #ChatGPT */
+
             string cesta = @"c:\xxx\zapis_teploty.txt";
 
             using (StreamWriter zapis = new StreamWriter(cesta))
