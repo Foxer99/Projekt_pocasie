@@ -14,8 +14,30 @@ namespace Projekt_počasie
 
             Random random_nubmer = new Random();
 
+            List<string> tridstat = new List<string>();
+            tridstat.Add("január");
+            tridstat.Add("januar");
+            tridstat.Add("Január");
+            tridstat.Add("Januar");
+            tridstat.Add("Marec");
+            tridstat.Add("marec");
+            tridstat.Add("Máj");
+            tridstat.Add("Maj");
+            tridstat.Add("máj");
+            tridstat.Add("maj");
+            tridstat.Add("Júl");
+            tridstat.Add("Jul");
+            tridstat.Add("júl");
+            tridstat.Add("jul");
+            tridstat.Add("August");
+            tridstat.Add("august");
+            tridstat.Add("Október");
+            tridstat.Add("Oktober");
+            tridstat.Add("október");
+            tridstat.Add("oktober");
+            tridstat.Add("December");
+            tridstat.Add("december");
 
-         
             List<string> tridstat_jedna = new List<string>();
             string februar = "29";
 
