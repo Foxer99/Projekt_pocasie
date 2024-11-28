@@ -71,6 +71,7 @@ namespace Projekt_počasie
             double teplota_d = 0;
 
             int pocet_opakovani = 0;
+            int ktory_mesiac = 0;
 
             do
             {
@@ -79,16 +80,72 @@ namespace Projekt_počasie
                 if (dvadsatdevat.Contains(mesiac))
                 {
                     dvadsatdevat_s = 1;
+                    if (mesiac == "Február" || mesiac == "Februar" || mesiac == "február" || mesiac == "februar")
+                    {
+                        ktory_mesiac = 2;    
+                    }
                     break;
                 }
                 else if (tridstat.Contains(mesiac))
                 {
                     tridstat_s = 1;
+                    if (mesiac == "Apríl" || mesiac == "April" || mesiac == "apríl" || mesiac == "april")
+                    {
+                        ktory_mesiac = 4;
+                    }
+                    else if (mesiac == "Jún" || mesiac == "Jun" || mesiac == "jún" || mesiac == "jun")
+                    {
+                        ktory_mesiac = 6;
+                    }
+                    else if (mesiac == "september" || mesiac == "september")
+                    {
+                        ktory_mesiac = 8;
+                    }
+                    else if (mesiac == "November" || mesiac == "november")
+                    {
+                        ktory_mesiac = 10;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n!!!Error!!!\nZlý mesiac");
+                    }
                     break;
                 }
                 else if (tridstat_jedna.Contains(mesiac))
                 {
                     tridstat_jedna_s = 1;
+                    if (mesiac == "Január" || mesiac == "Januar" || mesiac == "január" || mesiac == "januar")
+                    {
+                        ktory_mesiac = 1;
+                    }
+                    else if (mesiac == "Marec" || mesiac == "marec")
+                    {
+                        ktory_mesiac = 3;
+                    }
+                    else if (mesiac == "Máj" || mesiac == "Maj" || mesiac == "máj" || mesiac == "maj")
+                    {
+                        ktory_mesiac = 5;
+                    }
+                    else if (mesiac == "Júl" || mesiac == "Jul" || mesiac == "júl" || mesiac == "jul")
+                    {
+                        ktory_mesiac = 7;
+                    }
+                    else if (mesiac == "August" || mesiac == "august")
+                    {
+                        ktory_mesiac = 8;
+                    }
+                    else if (mesiac == "Október" || mesiac == "Oktober" || mesiac == "október" || mesiac == "oktober")
+                    {
+                        ktory_mesiac = 11;
+                    }
+                    else if (mesiac == "December" || mesiac == "december")
+                    {
+                        ktory_mesiac = 12;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n!!!Error!!!\nZlý mesiac");
+                    }
                     break;
                 }
                 else
@@ -109,7 +166,7 @@ namespace Projekt_počasie
                     {
                         if (den_i > 29)
                         {
-                            Console.WriteLine("\n!!!Error1!!!");
+                            Console.WriteLine("\n!!!Error!!!");
                         }
                         else
                         {
@@ -121,7 +178,7 @@ namespace Projekt_počasie
                     {
                         if (den_i > 30)
                         {
-                            Console.WriteLine("\n!!!Error2!!!");
+                            Console.WriteLine("\n!!!Error!!!");
                         }
                         else
                         {
@@ -133,7 +190,7 @@ namespace Projekt_počasie
                     {
                         if (den_i > 31)
                         {
-                            Console.WriteLine("\n!!!Error3!!!");
+                            Console.WriteLine("\n!!!Error!!!");
                         }
                         else
                         {
@@ -156,17 +213,17 @@ namespace Projekt_počasie
                 teplota_s = Console.ReadLine();
                 teplota_d = double.Parse(teplota_s);
 
-                Console.WriteLine(den_i + ". " + mesiac + " a teplota je " + teplota_d + "°C");
-
                 for (int i = 0; i < pocet_opakovani; i++)
                 {
                     double teplota = int.Parse(teplota_s);
                     double r_n = random_nubmer.NextDouble();
                     teplota = teplota + r_n;
                     teplota = (double)Math.Round(teplota, 1);
-                    Console.WriteLine(teplota);
+                    den_i += 1;
+                    Console.WriteLine(den_i + "." + ktory_mesiac + "->" + teplota + "°C");
+                    
                 }
-           
+                
         }
     }
 }
