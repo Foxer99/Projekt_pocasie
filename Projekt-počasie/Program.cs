@@ -39,6 +39,19 @@ namespace Projekt_počasie
             tridstat.Add("december");
 
             List<string> tridstat_jedna = new List<string>();
+            tridstat_jedna.Add("Apríl");
+            tridstat_jedna.Add("April");
+            tridstat_jedna.Add("apríl");
+            tridstat_jedna.Add("april");
+            tridstat_jedna.Add("Jún");
+            tridstat_jedna.Add("Jun");
+            tridstat_jedna.Add("jún");
+            tridstat_jedna.Add("jun");
+            tridstat_jedna.Add("September");
+            tridstat_jedna.Add("september");
+            tridstat_jedna.Add("November");
+            tridstat_jedna.Add("november");
+
             string februar = "29";
 
             Console.WriteLine("Zadaj deň v mesiaci: ");
