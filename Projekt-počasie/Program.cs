@@ -12,12 +12,17 @@ namespace Projekt_počasie
         static void Main(string[] args)
         {
             Console.WriteLine("Zadaj deň: ");
-            string den = Console.ReadLine();
+            string den_s = Console.ReadLine();
+            int den_i = int.Parse(den_s);
 
             Console.WriteLine("Zadaj mesiac");
             string mesiac = Console.ReadLine();
 
-            Console.WriteLine("Zadal si: " + den.ToString() + ". " + mesiac);
+            Console.WriteLine("Zadaj teplotu: ");
+            string teplota_s = Console.ReadLine();
+            double teplota_d = double.Parse(teplota_s);
+
+            Console.WriteLine("Zadal si " + den_i + ". " + mesiac + " a teplota je " + teplota_d + "°C");
 
 
         }
