@@ -77,6 +77,7 @@ namespace Projekt_počasie
                 int pocet_opakovani = 0;
                 int ktory_mesiac = 0;
 
+
                 do
                 {
                     Console.WriteLine("Zadaj mesiac");
@@ -217,19 +218,26 @@ namespace Projekt_počasie
                 teplota_s = Console.ReadLine();
                 teplota_d = double.Parse(teplota_s);
 
-                for (int i = 0; i < pocet_opakovani; i++)
+                if (pocet_opakovani == 0)
                 {
-                    double teplota = int.Parse(teplota_s);
-                    double r_n = random_nubmer.NextDouble();
-                    teplota = teplota + r_n;
-                    teplota = (double)Math.Round(teplota, 1);
-                    den_i += 1;
-                    Console.WriteLine(den_i + "." + ktory_mesiac + "->" + teplota + "°C");
-                    zapis.WriteLine(den_i + "." + ktory_mesiac + "->" + teplota + "°C");
+                    Console.WriteLine(den_i + "." + ktory_mesiac + "->" + teplota_d + "°C");
+                    zapis.WriteLine(den_i + "." + ktory_mesiac + "->" + teplota_d + "°C");
                     zapis.Flush();
                 }
-
-
+                else
+                {
+                    for(int i = 0; i < pocet_opakovani; i++)
+                    {
+                        double teplota = int.Parse(teplota_s);
+                        double r_n = random_nubmer.NextDouble();
+                        teplota = teplota + r_n;
+                        teplota = (double)Math.Round(teplota, 1);
+                        den_i += 1;
+                        Console.WriteLine(den_i + "." + ktory_mesiac + "->" + teplota + "°C");
+                        zapis.WriteLine(den_i + "." + ktory_mesiac + "->" + teplota + "°C");
+                        zapis.Flush();
+                    }
+                }
             }
         }
     }
