@@ -156,6 +156,7 @@ namespace Projekt_počasie
                     else
                     {
                         Console.WriteLine("\n!!!Error!!!\n> Zadal si zlý mesiac <\n");
+                        Console.Beep(1000, 1000);
                     }
                 }
                 while (true);
@@ -211,6 +212,7 @@ namespace Projekt_počasie
                     else
                     {
                         Console.WriteLine("\n!!!Error!!!\n> Zlý dátum <");
+                        Console.Beep(1000, 1000);
                     }
                 }
                 while (true);
