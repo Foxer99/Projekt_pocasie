@@ -63,12 +63,14 @@ namespace Projekt_počasie
             int dvadsatdevat_s = 0;
             int tridstat_s = 0;
             int tridstat_jedna_s = 0;
-            
+
             string den_s = null;
             int den_i = 0;
-            
+
             string teplota_s = null;
             double teplota_d = 0;
+
+            int pocet_opakovani = 0;
 
             do
             {
@@ -89,24 +91,74 @@ namespace Projekt_počasie
                     tridstat_jedna_s = 1;
                     break;
                 }
-                else 
+                else
                 {
                     Console.WriteLine("\n!!!Error!!!\n> Zadal si zlý mesiac <\n");
                 }
             }
             while (true);
 
-                Console.WriteLine("Zadaj deň v mesiaci: ");
+            do
+            {
+                Console.WriteLine("\nZadaj deň v mesiaci: ");
                 den_s = Console.ReadLine();
                 den_i = int.Parse(den_s);
-
+                if (den_i < 31)
+                {
+                    if (dvadsatdevat_s == 1)
+                    {
+                        if (den_i > 29)
+                        {
+                            Console.WriteLine("\n!!!Error1!!!");
+                        }
+                        else
+                        {
+                            pocet_opakovani = 29 - den_i;
+                            break;
+                        }
+                    }
+                    else if (tridstat_s == 1)
+                    {
+                        if (den_i > 30)
+                        {
+                            Console.WriteLine("\n!!!Error2!!!");
+                        }
+                        else
+                        {
+                            pocet_opakovani = 30 - den_i;
+                            break;
+                        }
+                    }
+                    else if (tridstat_jedna_s == 1)
+                    {
+                        if (den_i > 31)
+                        {
+                            Console.WriteLine("\n!!!Error3!!!");
+                        }
+                        else
+                        {
+                            pocet_opakovani = 31 - den_i;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n!!!Error!!!\n> Zlý dátum <");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\n!!!Error!!!\n> Zlý dátum <");
+                }
+            }
+            while (true);
                 Console.WriteLine("Zadaj teplotu: ");
                 teplota_s = Console.ReadLine();
                 teplota_d = double.Parse(teplota_s);
 
                 Console.WriteLine(den_i + ". " + mesiac + " a teplota je " + teplota_d + "°C");
 
-                for (int i = 0; i < 100; i++)
+                for (int i = 0; i < pocet_opakovani; i++)
                 {
                     double teplota = int.Parse(teplota_s);
                     double r_n = random_nubmer.NextDouble();
