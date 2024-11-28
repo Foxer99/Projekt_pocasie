@@ -11,7 +11,15 @@ namespace Projekt_počasie
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadaj deň: ");
+
+            Random random_nubmer = new Random();
+
+
+         
+            List<string> tridstat_jedna = new List<string>();
+            string februar = "29";
+
+            Console.WriteLine("Zadaj deň v mesiaci: ");
             string den_s = Console.ReadLine();
             int den_i = int.Parse(den_s);
 
@@ -22,9 +30,17 @@ namespace Projekt_počasie
             string teplota_s = Console.ReadLine();
             double teplota_d = double.Parse(teplota_s);
 
-            Console.WriteLine("Zadal si " + den_i + ". " + mesiac + " a teplota je " + teplota_d + "°C");
+            Console.WriteLine(den_i + ". " + mesiac + " a teplota je " + teplota_d + "°C");
 
+            for (int i = 0; i < 100; i++)
+            {
+                double teplota = int.Parse(teplota_s);
+                double r_n = random_nubmer.NextDouble();
+                teplota = teplota + r_n;
+                teplota = (double)Math.Round(teplota,1);
+                Console.WriteLine(teplota);
 
+            }
         }
     }
 }
